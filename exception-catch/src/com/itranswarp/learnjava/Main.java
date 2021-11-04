@@ -11,11 +11,14 @@ public class Main {
 		String a = "12";
 		String b = "x9";
 		// TODO: 捕获异常并处理
-		int c = stringToInt(a);
-		int d = stringToInt(b);
-		System.out.println(c * d);
+		try {
+			int c = stringToInt(a);
+			int d = stringToInt(b);
+			System.out.println(c * d);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+		}
 	}
-
 	static int stringToInt(String s) {
 		return Integer.parseInt(s);
 	}
