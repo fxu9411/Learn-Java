@@ -28,14 +28,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation 'junit:junit:4.13.1'
+    implementation 'junit:junit:4.13.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
 }
 
 sourceSets {
     main {
         java {
-            srcDirs 'build/generated/source/proto/main/grpc'
-            srcDirs 'build/generated/source/proto/main/java'
+            srcDirs 'src/generated/main/grpc'
+            srcDirs 'src/generated/main/java'
         }
     }
 }
