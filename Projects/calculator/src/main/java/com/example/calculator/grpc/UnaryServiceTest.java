@@ -17,7 +17,7 @@ public class UnaryServiceTest {
 
     @Before
     public void setup(){
-        this.channel = ManagedChannelBuilder.forAddress("localhost", 6565)
+        this.channel = ManagedChannelBuilder.forAddress("localhost", 9090)
                 .usePlaintext()
                 .build();
         this.clientStub = CalculatorServiceGrpc.newBlockingStub(channel);

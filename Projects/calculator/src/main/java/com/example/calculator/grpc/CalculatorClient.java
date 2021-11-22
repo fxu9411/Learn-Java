@@ -8,12 +8,14 @@ import io.grpc.ManagedChannelBuilder;
 
 public class CalculatorClient {
     public static void main(String[] args) {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 6565)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
                 .usePlaintext()
                 .build();
         CalculatorServiceGrpc.CalculatorServiceBlockingStub stub = CalculatorServiceGrpc.newBlockingStub(channel);
 
         Output calcOutput = stub.findFactorial(Input.newBuilder().setNumber(10).build());
+
+        System.out.println(calcOutput.getResult());
 
         channel.shutdown();
     }
