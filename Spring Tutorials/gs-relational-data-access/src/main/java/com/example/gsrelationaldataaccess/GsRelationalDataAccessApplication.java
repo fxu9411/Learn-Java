@@ -33,7 +33,18 @@ public class GsRelationalDataAccessApplication implements CommandLineRunner {
                 "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
 
         // Split up the array of whole names into an array of first/last names
-        List<Object[]> splitNames =
+        List<Object[]> splitNames = Arrays.asList("John Woo", "Jeff Dean", "Jose Bloch", "Josh Long").stream()
+                .map(name -> name.split(" "))
+                .collect(Collectors.toList());
 
+        splitNames.forEach(name -> log.info(String.format("Inserting customer record for %s %s", name[0], name[1])));
+
+        jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name) VALUES(?, ?)", splitNames);
+
+        log.info("Querying for customer records where first_name = 'Josh':");
+        jdbcTemplate.query("SELECT id, first_name, last_name FROM customers WHERE first_name = ?", new Object[] {"Josh"},
+                (rs, rowNum) -> new Customer(rs.getLong("id"),
+                                              rs.getString("first_name"),
+                                              rs.getString("last_name"))).forEach(customer -> log.info(customer.toString()));
     }
 }
