@@ -17,3 +17,7 @@ logging:
 
 greeting:
   welcome: You are using ${spring.application.name}.
+
+taco:
+  orders:
+    pageSize: 10
