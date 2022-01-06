@@ -8,18 +8,18 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@RequiredArgsConstructor
+@NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 public class Ingredient {
 
     @Id
-    private String id;
+    private final String id;
 
-    private String name;
+    private final String name;
 
-    private Type type;
+    private final Type type;
 
-    public static enum Type {
+    public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 }

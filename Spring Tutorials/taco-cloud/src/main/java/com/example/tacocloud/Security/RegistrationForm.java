@@ -1,5 +1,6 @@
-package com.example.tacocloud.Domain;
+package com.example.tacocloud.Security;
 
+import com.example.tacocloud.Domain.User;
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

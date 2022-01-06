@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+
+logging:
+  file:
+    path: /var/logs/
+    file: TacoCloud.log
+  level:
+    root: WARN
+    org:
+      springframework:
+        security: INFO
+
+greeting:
+  welcome: You are using ${spring.application.name}.

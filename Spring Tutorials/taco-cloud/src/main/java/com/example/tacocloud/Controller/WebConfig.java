@@ -1,4 +1,4 @@
-package com.example.tacocloud.Security;
+package com.example.tacocloud.Controller;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
