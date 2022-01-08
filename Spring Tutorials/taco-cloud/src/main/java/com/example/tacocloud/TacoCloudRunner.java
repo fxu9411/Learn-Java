@@ -2,14 +2,11 @@ package com.example.tacocloud;
 
 import com.example.tacocloud.Data.IngredientRepository;
 import com.example.tacocloud.Data.TacoRepository;
-import com.example.tacocloud.Data.UserRepository;
 import com.example.tacocloud.Domain.Ingredient;
 import com.example.tacocloud.Domain.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
