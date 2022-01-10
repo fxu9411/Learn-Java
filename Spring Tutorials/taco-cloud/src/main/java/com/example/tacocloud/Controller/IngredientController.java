@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api/ingredients", produces = "application/json")
+@CrossOrigin(origins = "*")
 public class IngredientController {
 
     private IngredientRepository ingredientRepository;
