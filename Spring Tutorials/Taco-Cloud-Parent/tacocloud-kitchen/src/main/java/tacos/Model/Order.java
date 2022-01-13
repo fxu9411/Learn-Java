@@ -1,4 +1,4 @@
-package taco.tacocloudkitchen.Model;
+package tacos.Model;
 
 import lombok.Data;
 
